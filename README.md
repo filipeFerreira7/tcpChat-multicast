@@ -1,3 +1,15 @@
+# Autores
+- Filipe Ferreira
+- Otávio Nardini
+
+# Fluxo Geral:
+1. Cliente conecta ao servidor.
+2. Envia nickname.
+3. Lê e envia mensagens com ajuda da `InputHandler`.
+4. Mostra mensagens recebidas do servidor no terminal.
+
+Conceito de Redes Aplicado: Comunicação confiável com múltiplos clientes via TCP.
+
 # 🚀 Chat Server & Client - Java Socket Application
 
 Uma simples aplicação de chat multi-client desenvolvida com Java Sockets
