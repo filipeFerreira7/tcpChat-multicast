@@ -9,6 +9,45 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/*  
+Objetivo: Implementa um servidor de chat multiusuário usando sockets TCP.
+
+Principais Componentes:
+
+ `ServerSocket server = new ServerSocket(9999);`: Cria o servidor na porta 9999.
+`Socket client = server.accept();`: Aguarda conexões de clientes.
+ `ConnectionHandler`: Classe interna que lida com cada cliente conectado.
+ `broadcast()`: Envia mensagens para todos os clientes conectados.
+ `ExecutorService`: Permite lidar com múltiplos clientes simultaneamente (multithread).
+
+Comandos no Chat:
+
+ `/nick novoNome`: Altera o apelido do usuário.
+ `/quit`: Sai do chat.
+
+--- */
+
+/*/
+Objetivo: Cliente que se conecta ao servidor e envia/recebe mensagens.
+
+Principais Componentes:
+
+`Socket client = new Socket("127.0.0.1", 9999);`: Conecta ao servidor local.
+`PrintWriter out`: Envia mensagens ao servidor.
+`BufferedReader in`: Recebe mensagens do servidor.
+`InputHandler`: (classe interna esperada) lê do teclado e envia mensagens para o servidor.
+`run()`: Inicia a conexão e escuta mensagens do servidor.
+
+Fluxo Geral:
+
+1. Cliente conecta ao servidor.
+2. Envia nickname.
+3. Lê e envia mensagens com ajuda da `InputHandler`.
+4. Mostra mensagens recebidas do servidor no terminal.
+
+Conceito de Redes Aplicado: Comunicação confiável com múltiplos clientes via TCP.
+*/
+
 public class Server implements Runnable {
     private ArrayList<ConnectionHandler> connections;
     private ServerSocket server;
